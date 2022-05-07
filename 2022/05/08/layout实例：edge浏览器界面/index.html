@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nutcra.github.io.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="layout实例：edge浏览器界面软件实际界面：   实现界面：     中间的logo： 图片以及矢量图的获取来自：iconfont-阿里巴巴矢量图标库  太简单了 直接上 123456789101112131415161718192021222324252627282930313233343536&lt;ImageView        android:id&#x3D;&quot;@+id&#x2F;logo&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zyu">
+<meta property="og:url" content="http://nutcra.github.io.com/2022/05/08/layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2/index.html">
+<meta property="og:site_name" content="Zyu">
+<meta property="og:description" content="layout实例：edge浏览器界面软件实际界面：   实现界面：     中间的logo： 图片以及矢量图的获取来自：iconfont-阿里巴巴矢量图标库  太简单了 直接上 123456789101112131415161718192021222324252627282930313233343536&lt;ImageView        android:id&#x3D;&quot;@+id&#x2F;logo&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/mrHwkVbxKghpMfu.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/sblyS3qHeO9DULm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/EhuSPLaoeU5Idyx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/2nCIaBuj4H1cQyo.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/jVleOCvFJqAnUhP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/9EoVPnKiv1uHGdf.png">
+<meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20220508020801455.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/TsG4eaRxibIo76V.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/oXcqrINySObma2n.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/Lmc8a2zpJHtMgxu.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/m5tqzHkQxWMOY2A.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/RW9swOZgXfvxLK2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/rXGSyWtH8eFZwcD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/HVrxQihz4LEWfSm.png">
+<meta property="article:published_time" content="2022-05-07T19:07:27.902Z">
+<meta property="article:modified_time" content="2022-05-07T19:03:32.954Z">
+<meta property="article:author" content="zyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png">
+
+
+<link rel="canonical" href="http://nutcra.github.io.com/2022/05/08/layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://nutcra.github.io.com/2022/05/08/layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2/","path":"2022/05/08/layout实例：edge浏览器界面/","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 站点</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Ŭ��ѧϰ��С��</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/%20home/" rel="section"><i class="house fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="box-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">0</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">layout实例：edge浏览器界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E9%97%B4%E7%9A%84logo%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">中间的logo：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A1%86%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">输入框：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VIewGroup%E4%BD%BF%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">VIewGroup使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup%E9%80%89%E6%8B%A9"><span class="nav-number">3.1.1.</span> <span class="nav-text">ViewGroup选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewGroup%E7%9A%84%E8%83%8C%E6%99%AF"><span class="nav-number">3.1.2.</span> <span class="nav-text">ViewGroup的背景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VIew%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">VIew使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#View%E7%9A%84%E5%A4%A7%E5%B0%8F%EF%BC%88LinearLayout%E7%9A%84weight%E6%96%B9%E6%B3%95%EF%BC%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">View的大小（LinearLayout的weight方法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EditText%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.2.</span> <span class="nav-text">EditText的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%AD%E7%9A%84%E7%BC%96%E8%BE%91"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">提示语的编辑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%89%E6%A0%87-cursor"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">光标 cursor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E7%95%8C%E9%9D%A2%E8%87%AA%E5%8A%A8%E8%81%9A%E7%84%A6EditText"><span class="nav-number">3.2.2.4.</span> <span class="nav-text">取消界面自动聚焦EditText</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageView"><span class="nav-number">3.2.3.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TextView%E8%87%AA%E5%8A%A8%E8%B0%83%E6%95%B4text%E5%A4%A7%E5%B0%8F"><span class="nav-number">3.2.4.</span> <span class="nav-text">TextView自动调整text大小</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zyu</p>
+  <div class="site-description" itemprop="description">zyu</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/github" title="GitHub → github"><i class="https://github.com/Nutcra-yu fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nutcra.github.io.com/2022/05/08/layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="站点">
+      <meta itemprop="description" content="zyu">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-05-08 03:07:27 / 修改时间：03:03:32" itemprop="dateCreated datePublished" datetime="2022-05-08T03:07:27+08:00">2022-05-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="layout实例：edge浏览器界面"><a href="#layout实例：edge浏览器界面" class="headerlink" title="layout实例：edge浏览器界面"></a>layout实例：edge浏览器界面</h1><p>软件实际界面：</p>
+<img src="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png" alt="image-20220508005256086" style="zoom:25%;" />
+
+<p>实现界面：</p>
+<img src="https://s2.loli.net/2022/05/08/mrHwkVbxKghpMfu.png" alt="image-20220508005457503" style="zoom: 50%;" />
+
+
+
+<h1 id="中间的logo："><a href="#中间的logo：" class="headerlink" title="中间的logo："></a>中间的logo：</h1><blockquote>
+<p>图片以及矢量图的获取来自：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont-阿里巴巴矢量图标库</a></p>
+</blockquote>
+<p>太简单了 直接上</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/logo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintHeight_percent</span>=<span class="string">&quot;0.08&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintDimensionRatio</span>=<span class="string">&quot;1:1&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.4&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">&quot;0.2&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">&quot;@drawable/microsoft&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintHeight_percent</span>=<span class="string">&quot;0.08&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintWidth_percent</span>=<span class="string">&quot;0.5&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;@id/logo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;@id/logo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintLeft_toRightOf</span>=<span class="string">&quot;@id/logo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">&quot;0.08&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">&quot;Microsoft&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">&quot;center&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">&quot;45sp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textStyle</span>=<span class="string">&quot;bold&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">&quot;#707070&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/sblyS3qHeO9DULm.png" alt="image-20220508012803681" style="zoom:50%;" />
+
+<h1 id="输入框："><a href="#输入框：" class="headerlink" title="输入框："></a>输入框：</h1><h2 id="VIewGroup使用"><a href="#VIewGroup使用" class="headerlink" title="VIewGroup使用"></a>VIewGroup使用</h2><h3 id="ViewGroup选择"><a href="#ViewGroup选择" class="headerlink" title="ViewGroup选择"></a>ViewGroup选择</h3><p>先观察，有三个控件：<code>edittext</code>，<code>imageVIew</code>(QRcode)，<code>imageView</code>(microphone)</p>
+<p>从左至右排列，使用<code>LinearLayout</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintWidth_percent</span>=<span class="string">&quot;0.74&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintHeight_percent</span>=<span class="string">&quot;0.07&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">&quot;parent&quot;</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">        <span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">&quot;0.75&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">&quot;@+id/input&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">&quot;@+id/QRCode&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">&quot;@+id/microphone&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ViewGroup的背景"><a href="#ViewGroup的背景" class="headerlink" title="ViewGroup的背景"></a>ViewGroup的背景</h3><p>背景是一个椭圆形<br>这里我们就要创建一个 drawable 作为它的 background</p>
+<p>（ 见另一篇 《shape的使用》）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">res/drawable/input_box.xml</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">&quot;100dp&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;@color/white&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/EhuSPLaoeU5Idyx.png" alt="image-20220508015425647"></p>
+<p>是不是还差点意思？对，阴影<br>VIew有一个高度的属性：<code>elevation</code></p>
+<blockquote>
+<p>elevation : n. 高度，海拔</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        ···</span></span><br><span class="line"><span class="tag">        <span class="attr">android:elevation</span>=<span class="string">&quot;10dp&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/2nCIaBuj4H1cQyo.png" alt="image-20220508015833939"></p>
+<h2 id="VIew使用"><a href="#VIew使用" class="headerlink" title="VIew使用"></a>VIew使用</h2><p>接下来写这三个控件：</p>
+<h3 id="View的大小（LinearLayout的weight方法）"><a href="#View的大小（LinearLayout的weight方法）" class="headerlink" title="View的大小（LinearLayout的weight方法）"></a>View的大小（LinearLayout的weight方法）</h3><p>首先是大小，我们采用LinearLayout独有的方法 权重<code>weight</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:id</span>=<span class="string">&quot;@+id/input&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_weight</span>=<span class="string">&quot;5&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:id</span>=<span class="string">&quot;@+id/QRCode&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:id</span>=<span class="string">&quot;@+id/microphone&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_weight</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_width</span>=<span class="string">&quot;0dp&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="EditText的使用"><a href="#EditText的使用" class="headerlink" title="EditText的使用"></a>EditText的使用</h3><h4 id="提示语的编辑"><a href="#提示语的编辑" class="headerlink" title="提示语的编辑"></a>提示语的编辑</h4><p><code>hint</code>属性：hint 、 hintcolor ···</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">          ···</span></span><br><span class="line"><span class="tag">          <span class="attr">android:textSize</span>=<span class="string">&quot;20sp&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">android:hint</span>=<span class="string">&quot;搜索或键入web地址&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/jVleOCvFJqAnUhP.png" alt="image-20220508020350054" style="zoom:150%;" />
+
+<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>我们不要这个下划线,加上这一句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:background</span>=<span class="string">&quot;@null&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/9EoVPnKiv1uHGdf.png" alt="image-20220508020657368" style="zoom:150%;" />
+
+<h4 id="光标-cursor"><a href="#光标-cursor" class="headerlink" title="光标 cursor"></a>光标 cursor</h4><p>跑起来的光标是丑丑的荧光原谅色 哒咩！</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220508020801455.png" alt="image-20220508020801455" style="zoom:80%;" />
+
+<p>我们为光标新建一个drawable</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">res/drawable/cursor.xml</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:width</span>=<span class="string">&quot;2dp&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">&quot;@android:color/darker_gray&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后调用 <code>text Cursor Drawable</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span></span></span><br><span class="line"><span class="tag">          ···</span></span><br><span class="line"><span class="tag">          <span class="attr">android:textCursorDrawable</span>=<span class="string">&quot;@drawable/cursor&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/TsG4eaRxibIo76V.png" alt="image-20220508021431482"></p>
+<h4 id="取消界面自动聚焦EditText"><a href="#取消界面自动聚焦EditText" class="headerlink" title="取消界面自动聚焦EditText"></a>取消界面自动聚焦EditText</h4><p>有的机子运行界面，发现会自动弹出键盘<br>这是因为界面会自动聚焦到editText上<br>在父布局里加上以下代码<br>可以让父布局夺取焦点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span></span></span><br><span class="line"><span class="tag">    ···</span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusable</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:focusableInTouchMode</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ImageView"><a href="#ImageView" class="headerlink" title="ImageView"></a>ImageView</h3><p>为 两个imageview添加 <u><em><code>background </code></em></u><br>会发现图片极其怪异</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:background</span>=<span class="string">&quot;@drawable/qr_code&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:background</span>=<span class="string">&quot;@drawable/microphone&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/oXcqrINySObma2n.png" alt="image-20220508022153298" style="zoom:150%;" />
+
+<p>这是因为 background 会自动拉伸填满控件<br>view还有一个可以添加背景的属性 <code>src</code></p>
+<p>（见另一篇 《background 和 src 》）</p>
+<p>background会根据ImageView组件给定的长宽进行拉伸，而src就存放的是原图的大小，不会进行拉伸。src是图片内容(前景)，bg是背景，可以同时使用。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:src</span>=<span class="string">&quot;@drawable/qr_code&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:src</span>=<span class="string">&quot;@drawable/microphone&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/Lmc8a2zpJHtMgxu.png" alt="image-20220508022759546" style="zoom:150%;" />
+
+<p>好多了，但是有点大</p>
+<p>给两个imageView加上margin</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:layout_marginVertical</span>=<span class="string">&quot;10dp&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">         ···</span></span><br><span class="line"><span class="tag">		<span class="attr">android:layout_marginVertical</span>=<span class="string">&quot;10dp&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/m5tqzHkQxWMOY2A.png" alt="image-20220508023959252" style="zoom:150%;" />
+
+<p>这样就差不多了</p>
+<p><img src="https://s2.loli.net/2022/05/08/RW9swOZgXfvxLK2.png" alt="image-20220508024322910"></p>
+<p>但是，如果这时候横过屏来</p>
+<p><img src="https://s2.loli.net/2022/05/08/rXGSyWtH8eFZwcD.png" alt="image-20220508024448314"></p>
+<h3 id="TextView自动调整text大小"><a href="#TextView自动调整text大小" class="headerlink" title="TextView自动调整text大小"></a>TextView自动调整text大小</h3><p>字体就会出现一些奇怪的事情，我们需要让字体去适应他的TextVIew</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">	···</span></span><br><span class="line"><span class="tag">    <span class="attr">android:autoSizeTextType</span>=<span class="string">&quot;uniform&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:autoSizeMinTextSize</span>=<span class="string">&quot;10sp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:autoSizeMaxTextSize</span>=<span class="string">&quot;50sp&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:autoSizeStepGranularity</span>=<span class="string">&quot;2sp&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>android:autoSizeTextType&#x3D;”uniform”</p>
+<blockquote>
+<p>使用自动调整</p>
+</blockquote>
+<p>android:autoSizeMinTextSize&#x3D;”10sp”<br>android:autoSizeMaxTextSize&#x3D;”50sp”</p>
+<blockquote>
+<p>设置字体最大最小尺寸</p>
+</blockquote>
+<p>android:autoSizeStepGranularity&#x3D;”2sp”</p>
+<blockquote>
+<p>设置粒度，即字体每次放大缩小的尺寸</p>
+<p>例如这里粒度设置为2sp，若原始为10sp，下一次放大会变成12sp，14sp····</p>
+</blockquote>
+<p>好多了</p>
+<p><img src="https://s2.loli.net/2022/05/08/HVrxQihz4LEWfSm.png" alt="image-20220508030159583"></p>
+<p>（其实横屏的话应该再写一个layout布局，这里只是为了引出textView的自动调整）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/08/background%20%E5%92%8C%20src/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/08/res%20%E8%B5%84%E6%BA%90/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zyu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

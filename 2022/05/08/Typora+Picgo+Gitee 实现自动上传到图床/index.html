@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nutcra.github.io.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.11.0","exturl":false,"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Typora+Picgo+Gitee 实现自动上传到图床 （2022.3 最新通知）gitee不允许仓库作为个人图床，请移步 使用SMMS图床搭建  下载typora下载Picgo国内镜像下载（推荐）​	Index of &#x2F;github-release&#x2F;Molunerfinn_PicGo&#x2F; (sdu.edu.cn) github下载​	Releases · Molun">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zyu">
+<meta property="og:url" content="http://nutcra.github.io.com/2022/05/08/Typora+Picgo+Gitee%20%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="Zyu">
+<meta property="og:description" content="Typora+Picgo+Gitee 实现自动上传到图床 （2022.3 最新通知）gitee不允许仓库作为个人图床，请移步 使用SMMS图床搭建  下载typora下载Picgo国内镜像下载（推荐）​	Index of &#x2F;github-release&#x2F;Molunerfinn_PicGo&#x2F; (sdu.edu.cn) github下载​	Releases · Molun">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022118187.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022127751.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022128569.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022130644.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022135505.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022139741.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022141013.png">
+<meta property="og:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022147636.png">
+<meta property="article:published_time" content="2022-05-07T19:07:27.914Z">
+<meta property="article:modified_time" content="2022-05-06T08:37:30.883Z">
+<meta property="article:author" content="zyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Nutcra/picture/raw/master/202205022118187.png">
+
+
+<link rel="canonical" href="http://nutcra.github.io.com/2022/05/08/Typora+Picgo+Gitee%20%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0%E5%9B%BE%E5%BA%8A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://nutcra.github.io.com/2022/05/08/Typora+Picgo+Gitee%20%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0%E5%9B%BE%E5%BA%8A/","path":"2022/05/08/Typora+Picgo+Gitee 实现自动上传到图床/","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 站点</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">站点</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Ŭ��ѧϰ��С��</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/%20home/" rel="section"><i class="house fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="box-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">0</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Typora-Picgo-Gitee-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0%E5%9B%BE%E5%BA%8A"><span class="nav-number">1.</span> <span class="nav-text">Typora+Picgo+Gitee 实现自动上传到图床</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EF%BC%882022-3-%E6%9C%80%E6%96%B0%E9%80%9A%E7%9F%A5%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">（2022.3 最新通知）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDtypora"><span class="nav-number">2.1.</span> <span class="nav-text">下载typora</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDPicgo"><span class="nav-number">2.2.</span> <span class="nav-text">下载Picgo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">2.2.1.</span> <span class="nav-text">国内镜像下载（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.2.2.</span> <span class="nav-text">github下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEgitee%E4%BD%9C%E4%B8%BA%E5%9B%BE%E5%BA%8A"><span class="nav-number">2.3.</span> <span class="nav-text">配置gitee作为图床</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BAgitee%E4%BB%93%E5%BA%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 创建gitee仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%94%9F%E6%88%90%E4%BB%A4%E7%89%8C-token"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 生成令牌 (token)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEpicgo"><span class="nav-number">2.4.</span> <span class="nav-text">配置picgo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDgitee%E6%8F%92%E4%BB%B6"><span class="nav-number">2.4.1.</span> <span class="nav-text">1.下载gitee插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.配置重命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A"><span class="nav-number">2.4.3.</span> <span class="nav-text">3.配置图床</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEtypora"><span class="nav-number">2.5.</span> <span class="nav-text">配置typora</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E5%BD%95%EF%BC%88%E6%88%AA%E5%9B%BE%E5%BF%AB%E6%8D%B7%E9%94%AE%EF%BC%89%EF%BC%9A"><span class="nav-number">2.6.</span> <span class="nav-text">附录（截图快捷键）：</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zyu</p>
+  <div class="site-description" itemprop="description">zyu</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/github" title="GitHub → github"><i class="https://github.com/Nutcra-yu fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nutcra.github.io.com/2022/05/08/Typora+Picgo+Gitee%20%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E5%88%B0%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="站点">
+      <meta itemprop="description" content="zyu">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 站点">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-08 03:07:27" itemprop="dateCreated datePublished" datetime="2022-05-08T03:07:27+08:00">2022-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-06 16:37:30" itemprop="dateModified" datetime="2022-05-06T16:37:30+08:00">2022-05-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Typora-Picgo-Gitee-实现自动上传到图床"><a href="#Typora-Picgo-Gitee-实现自动上传到图床" class="headerlink" title="Typora+Picgo+Gitee 实现自动上传到图床"></a>Typora+Picgo+Gitee 实现自动上传到图床</h1><hr>
+<h1 id="（2022-3-最新通知）"><a href="#（2022-3-最新通知）" class="headerlink" title="（2022.3 最新通知）"></a><strong>（2022.3 最新通知）</strong></h1><p><strong>gitee不允许仓库作为个人图床，请移步 使用SMMS图床搭建</strong></p>
+<hr>
+<h2 id="下载typora"><a href="#下载typora" class="headerlink" title="下载typora"></a>下载typora</h2><h2 id="下载Picgo"><a href="#下载Picgo" class="headerlink" title="下载Picgo"></a>下载Picgo</h2><h3 id="国内镜像下载（推荐）"><a href="#国内镜像下载（推荐）" class="headerlink" title="国内镜像下载（推荐）"></a>国内镜像下载（推荐）</h3><p>​	<a target="_blank" rel="noopener" href="https://mirrors.sdu.edu.cn/github-release/Molunerfinn_PicGo/">Index of &#x2F;github-release&#x2F;Molunerfinn_PicGo&#x2F; (sdu.edu.cn)</a></p>
+<h3 id="github下载"><a href="#github下载" class="headerlink" title="github下载"></a>github下载</h3><p>​	<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">Releases · Molunerfinn&#x2F;PicGo (github.com)</a></p>
+<blockquote>
+<p>找到下面的地方，选择版本</p>
+<p>（win10 使用后缀为 x64.exe 的选项）</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022118187.png" alt="image-20220502211812331" style="zoom: 67%;" />
+</blockquote>
+<h2 id="配置gitee作为图床"><a href="#配置gitee作为图床" class="headerlink" title="配置gitee作为图床"></a>配置gitee作为图床</h2><p>（可以使用GitHub，操作同理。但是经常会出问题，建议国内还是使用gitee）</p>
+<h3 id="1-创建gitee仓库"><a href="#1-创建gitee仓库" class="headerlink" title="1. 创建gitee仓库"></a>1. 创建gitee仓库</h3><img src="https://gitee.com/Nutcra/picture/raw/master/202205022127751.png" alt="image-20220502212731699" style="zoom: 67%;" />
+
+<h3 id="2-生成令牌-token"><a href="#2-生成令牌-token" class="headerlink" title="2. 生成令牌 (token)"></a>2. 生成令牌 (token)</h3><p>进入右上角设置</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022128569.png" alt="image-20220502212841537" style="zoom:67%;" />
+
+<p>私人令牌 -&gt; 生成新令牌</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022130644.png" alt="image-20220502213009614" style="zoom:67%;" />
+
+<p>令牌只出现一次</p>
+<p><em><strong>配置令牌之后一定要保存！！！</strong></em></p>
+<p><em><strong>配置令牌之后一定要保存！！！</strong></em></p>
+<p><em><strong>配置令牌之后一定要保存！！！</strong></em></p>
+<h2 id="配置picgo"><a href="#配置picgo" class="headerlink" title="配置picgo"></a>配置picgo</h2><h3 id="1-下载gitee插件"><a href="#1-下载gitee插件" class="headerlink" title="1.下载gitee插件"></a>1.下载gitee插件</h3><p>打开插件设置 下载 <em>gitee-uploader</em> </p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022135505.png" alt="image-20220502213537465" style="zoom:67%;" />
+
+<h3 id="2-配置重命名"><a href="#2-配置重命名" class="headerlink" title="2.配置重命名"></a>2.配置重命名</h3><p>使用时间戳重命名（避免重名）</p>
+<p>（其他建议关闭）</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022139741.png" alt="image-20220502213952699" style="zoom:67%;" />
+
+<h3 id="3-配置图床"><a href="#3-配置图床" class="headerlink" title="3.配置图床"></a>3.配置图床</h3><p>repo：创建的仓库名</p>
+<p>branch：main or master</p>
+<p>token：即刚刚保存的令牌</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022141013.png" alt="image-20220502214141969" style="zoom:67%;" />
+
+<p>确认并保存</p>
+<h2 id="配置typora"><a href="#配置typora" class="headerlink" title="配置typora"></a>配置typora</h2><p>文件 -&gt; 偏好设置 -&gt; 图像</p>
+<img src="https://gitee.com/Nutcra/picture/raw/master/202205022147636.png" alt="image-20220502214754586" style="zoom:67%;" />
+
+
+
+
+
+<p>这时候就好啦</p>
+<h2 id="附录（截图快捷键）："><a href="#附录（截图快捷键）：" class="headerlink" title="附录（截图快捷键）："></a>附录（截图快捷键）：</h2><p>Shift + Windows + S ：windows自带截图<br>Ctrl + Alt + A : 微信截图<br>Ctrl + Alt + A : QQ截图</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/08/res%20%E8%B5%84%E6%BA%90/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/08/%E5%B8%83%E5%B1%80%20Layout/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zyu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
