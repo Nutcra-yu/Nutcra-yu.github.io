@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="zyu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="layout实例：edge浏览器界面软件实际界面：   实现界面：     中间的logo： 图片以及矢量图的获取来自：iconfont-阿里巴巴矢量图标库  太简单了 直接上 123456789101112131415161718192021222324252627282930313233343536&lt;ImageView        android:id&#x3D;&quot;@+id&#x2F;logo&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zyu">
+<meta property="og:url" content="http://nutcra.github.io.com/2022/10/09/layout%E5%AE%9E%E4%BE%8B%EF%BC%9Aedge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%95%8C%E9%9D%A2/index.html">
+<meta property="og:site_name" content="Zyu">
+<meta property="og:description" content="layout实例：edge浏览器界面软件实际界面：   实现界面：     中间的logo： 图片以及矢量图的获取来自：iconfont-阿里巴巴矢量图标库  太简单了 直接上 123456789101112131415161718192021222324252627282930313233343536&lt;ImageView        android:id&#x3D;&quot;@+id&#x2F;logo&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/mrHwkVbxKghpMfu.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/sblyS3qHeO9DULm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/EhuSPLaoeU5Idyx.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/2nCIaBuj4H1cQyo.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/jVleOCvFJqAnUhP.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/9EoVPnKiv1uHGdf.png">
+<meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20220508020801455.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/TsG4eaRxibIo76V.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/oXcqrINySObma2n.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/Lmc8a2zpJHtMgxu.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/m5tqzHkQxWMOY2A.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/RW9swOZgXfvxLK2.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/rXGSyWtH8eFZwcD.png">
+<meta property="og:image" content="https://s2.loli.net/2022/05/08/HVrxQihz4LEWfSm.png">
+<meta property="article:published_time" content="2022-10-09T03:20:00.380Z">
+<meta property="article:modified_time" content="2022-05-07T19:03:32.954Z">
+<meta property="article:author" content="zyu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png">
+  
+  
+  
+  <title>Zyu</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nutcra.github.io.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-09 11:20" pubdate>
+          2022年10月9日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          44 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="layout实例：edge浏览器界面"><a href="#layout实例：edge浏览器界面" class="headerlink" title="layout实例：edge浏览器界面"></a>layout实例：edge浏览器界面</h1><p>软件实际界面：</p>
+<img src="https://s2.loli.net/2022/05/08/CNmYQWMbl6tgs1k.png" srcset="/img/loading.gif" lazyload alt="image-20220508005256086" style="zoom:25%;" />
+
+<p>实现界面：</p>
+<img src="https://s2.loli.net/2022/05/08/mrHwkVbxKghpMfu.png" srcset="/img/loading.gif" lazyload alt="image-20220508005457503" style="zoom: 50%;" />
+
+
+
+<h1 id="中间的logo："><a href="#中间的logo：" class="headerlink" title="中间的logo："></a>中间的logo：</h1><blockquote>
+<p>图片以及矢量图的获取来自：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont-阿里巴巴矢量图标库</a></p>
+</blockquote>
+<p>太简单了 直接上</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/logo&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintHeight_percent</span>=<span class="hljs-string">&quot;0.08&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintDimensionRatio</span>=<span class="hljs-string">&quot;1:1&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintLeft_toLeftOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintRight_toRightOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.4&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintHorizontal_bias</span>=<span class="hljs-string">&quot;0.2&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/microsoft&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintHeight_percent</span>=<span class="hljs-string">&quot;0.08&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintWidth_percent</span>=<span class="hljs-string">&quot;0.5&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;@id/logo&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;@id/logo&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintLeft_toRightOf</span>=<span class="hljs-string">&quot;@id/logo&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintRight_toRightOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintHorizontal_bias</span>=<span class="hljs-string">&quot;0.08&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Microsoft&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;45sp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textStyle</span>=<span class="hljs-string">&quot;bold&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;#707070&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/sblyS3qHeO9DULm.png" srcset="/img/loading.gif" lazyload alt="image-20220508012803681" style="zoom:50%;" />
+
+<h1 id="输入框："><a href="#输入框：" class="headerlink" title="输入框："></a>输入框：</h1><h2 id="VIewGroup使用"><a href="#VIewGroup使用" class="headerlink" title="VIewGroup使用"></a>VIewGroup使用</h2><h3 id="ViewGroup选择"><a href="#ViewGroup选择" class="headerlink" title="ViewGroup选择"></a>ViewGroup选择</h3><p>先观察，有三个控件：<code>edittext</code>，<code>imageVIew</code>(QRcode)，<code>imageView</code>(microphone)</p>
+<p>从左至右排列，使用<code>LinearLayout</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintWidth_percent</span>=<span class="hljs-string">&quot;0.74&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintHeight_percent</span>=<span class="hljs-string">&quot;0.07&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintBottom_toBottomOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintLeft_toLeftOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintRight_toRightOf</span>=<span class="hljs-string">&quot;parent&quot;</span></span><br><span class="hljs-tag"></span><br><span class="hljs-tag">        <span class="hljs-attr">app:layout_constraintVertical_bias</span>=<span class="hljs-string">&quot;0.75&quot;</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">EditText</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/input&quot;</span>/&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/QRCode&quot;</span>/&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">            <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/microphone&quot;</span>/&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="ViewGroup的背景"><a href="#ViewGroup的背景" class="headerlink" title="ViewGroup的背景"></a>ViewGroup的背景</h3><p>背景是一个椭圆形<br>这里我们就要创建一个 drawable 作为它的 background</p>
+<p>（ 见另一篇 《shape的使用》）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml">res/drawable/input_box.xml<br><br><span class="hljs-tag">&lt;<span class="hljs-name">shape</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">corners</span> <span class="hljs-attr">android:radius</span>=<span class="hljs-string">&quot;100dp&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">solid</span> <span class="hljs-attr">android:color</span>=<span class="hljs-string">&quot;@color/white&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">shape</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/EhuSPLaoeU5Idyx.png" srcset="/img/loading.gif" lazyload alt="image-20220508015425647"></p>
+<p>是不是还差点意思？对，阴影<br>VIew有一个高度的属性：<code>elevation</code></p>
+<blockquote>
+<p>elevation : n. 高度，海拔</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span></span><br><span class="hljs-tag">        ···</span><br><span class="hljs-tag">        <span class="hljs-attr">android:elevation</span>=<span class="hljs-string">&quot;10dp&quot;</span> &gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/2nCIaBuj4H1cQyo.png" srcset="/img/loading.gif" lazyload alt="image-20220508015833939"></p>
+<h2 id="VIew使用"><a href="#VIew使用" class="headerlink" title="VIew使用"></a>VIew使用</h2><p>接下来写这三个控件：</p>
+<h3 id="View的大小（LinearLayout的weight方法）"><a href="#View的大小（LinearLayout的weight方法）" class="headerlink" title="View的大小（LinearLayout的weight方法）"></a>View的大小（LinearLayout的weight方法）</h3><p>首先是大小，我们采用LinearLayout独有的方法 权重<code>weight</code>:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">EditText</span></span><br><span class="hljs-tag">          <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/input&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;5&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>/&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/QRCode&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>/&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/microphone&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;0dp&quot;</span></span><br><span class="hljs-tag">           <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="EditText的使用"><a href="#EditText的使用" class="headerlink" title="EditText的使用"></a>EditText的使用</h3><h4 id="提示语的编辑"><a href="#提示语的编辑" class="headerlink" title="提示语的编辑"></a>提示语的编辑</h4><p><code>hint</code>属性：hint 、 hintcolor ···</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">EditText</span></span><br><span class="hljs-tag">          ···</span><br><span class="hljs-tag">          <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;20sp&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">android:hint</span>=<span class="hljs-string">&quot;搜索或键入web地址&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/jVleOCvFJqAnUhP.png" srcset="/img/loading.gif" lazyload alt="image-20220508020350054" style="zoom:150%;" />
+
+<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>我们不要这个下划线,加上这一句</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">EditText</span></span><br><span class="hljs-tag">	<span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@null&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/9EoVPnKiv1uHGdf.png" srcset="/img/loading.gif" lazyload alt="image-20220508020657368" style="zoom:150%;" />
+
+<h4 id="光标-cursor"><a href="#光标-cursor" class="headerlink" title="光标 cursor"></a>光标 cursor</h4><p>跑起来的光标是丑丑的荧光原谅色 哒咩！</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220508020801455.png" srcset="/img/loading.gif" lazyload alt="image-20220508020801455" style="zoom:80%;" />
+
+<p>我们为光标新建一个drawable</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml">res/drawable/cursor.xml<br><br><span class="hljs-tag">&lt;<span class="hljs-name">shape</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">size</span> <span class="hljs-attr">android:width</span>=<span class="hljs-string">&quot;2dp&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">solid</span> <span class="hljs-attr">android:color</span>=<span class="hljs-string">&quot;@android:color/darker_gray&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">shape</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>然后调用 <code>text Cursor Drawable</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">EditText</span></span><br><span class="hljs-tag">          ···</span><br><span class="hljs-tag">          <span class="hljs-attr">android:textCursorDrawable</span>=<span class="hljs-string">&quot;@drawable/cursor&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/05/08/TsG4eaRxibIo76V.png" srcset="/img/loading.gif" lazyload alt="image-20220508021431482"></p>
+<h4 id="取消界面自动聚焦EditText"><a href="#取消界面自动聚焦EditText" class="headerlink" title="取消界面自动聚焦EditText"></a>取消界面自动聚焦EditText</h4><p>有的机子运行界面，发现会自动弹出键盘<br>这是因为界面会自动聚焦到editText上<br>在父布局里加上以下代码<br>可以让父布局夺取焦点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">androidx.constraintlayout.widget.ConstraintLayout</span></span><br><span class="hljs-tag">    ···</span><br><span class="hljs-tag">    <span class="hljs-attr">android:focusable</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:focusableInTouchMode</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="ImageView"><a href="#ImageView" class="headerlink" title="ImageView"></a>ImageView</h3><p>为 两个imageview添加 <u><em><code>background </code></em></u><br>会发现图片极其怪异</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/qr_code&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/microphone&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/oXcqrINySObma2n.png" srcset="/img/loading.gif" lazyload alt="image-20220508022153298" style="zoom:150%;" />
+
+<p>这是因为 background 会自动拉伸填满控件<br>view还有一个可以添加背景的属性 <code>src</code></p>
+<p>（见另一篇 《background 和 src 》）</p>
+<p>background会根据ImageView组件给定的长宽进行拉伸，而src就存放的是原图的大小，不会进行拉伸。src是图片内容(前景)，bg是背景，可以同时使用。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/qr_code&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/microphone&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/Lmc8a2zpJHtMgxu.png" srcset="/img/loading.gif" lazyload alt="image-20220508022759546" style="zoom:150%;" />
+
+<p>好多了，但是有点大</p>
+<p>给两个imageView加上margin</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:layout_marginVertical</span>=<span class="hljs-string">&quot;10dp&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span></span><br><span class="hljs-tag">         ···</span><br><span class="hljs-tag">		<span class="hljs-attr">android:layout_marginVertical</span>=<span class="hljs-string">&quot;10dp&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<img src="https://s2.loli.net/2022/05/08/m5tqzHkQxWMOY2A.png" srcset="/img/loading.gif" lazyload alt="image-20220508023959252" style="zoom:150%;" />
+
+<p>这样就差不多了</p>
+<p><img src="https://s2.loli.net/2022/05/08/RW9swOZgXfvxLK2.png" srcset="/img/loading.gif" lazyload alt="image-20220508024322910"></p>
+<p>但是，如果这时候横过屏来</p>
+<p><img src="https://s2.loli.net/2022/05/08/rXGSyWtH8eFZwcD.png" srcset="/img/loading.gif" lazyload alt="image-20220508024448314"></p>
+<h3 id="TextView自动调整text大小"><a href="#TextView自动调整text大小" class="headerlink" title="TextView自动调整text大小"></a>TextView自动调整text大小</h3><p>字体就会出现一些奇怪的事情，我们需要让字体去适应他的TextVIew</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextView</span></span><br><span class="hljs-tag">	···</span><br><span class="hljs-tag">    <span class="hljs-attr">android:autoSizeTextType</span>=<span class="hljs-string">&quot;uniform&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:autoSizeMinTextSize</span>=<span class="hljs-string">&quot;10sp&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:autoSizeMaxTextSize</span>=<span class="hljs-string">&quot;50sp&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">android:autoSizeStepGranularity</span>=<span class="hljs-string">&quot;2sp&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>android:autoSizeTextType&#x3D;”uniform”</p>
+<blockquote>
+<p>使用自动调整</p>
+</blockquote>
+<p>android:autoSizeMinTextSize&#x3D;”10sp”<br>android:autoSizeMaxTextSize&#x3D;”50sp”</p>
+<blockquote>
+<p>设置字体最大最小尺寸</p>
+</blockquote>
+<p>android:autoSizeStepGranularity&#x3D;”2sp”</p>
+<blockquote>
+<p>设置粒度，即字体每次放大缩小的尺寸</p>
+<p>例如这里粒度设置为2sp，若原始为10sp，下一次放大会变成12sp，14sp····</p>
+</blockquote>
+<p>好多了</p>
+<p><img src="https://s2.loli.net/2022/05/08/HVrxQihz4LEWfSm.png" srcset="/img/loading.gif" lazyload alt="image-20220508030159583"></p>
+<p>（其实横屏的话应该再写一个layout布局，这里只是为了引出textView的自动调整）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>http://nutcra.github.io.com/2022/10/09/layout实例：edge浏览器界面/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>zyu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/09/RecyclerView/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/09/background%20%E5%92%8C%20src/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
