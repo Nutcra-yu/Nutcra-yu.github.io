@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>git的使用</title>
+    <link href="/2022/10/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2022/10/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>j</p><h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><h2 id="本地分支改名"><a href="#本地分支改名" class="headerlink" title="本地分支改名"></a>本地分支改名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch -m 想要的名字<br></code></pre></td></tr></table></figure><h1 id="远程仓库有文件-关联本地仓库"><a href="#远程仓库有文件-关联本地仓库" class="headerlink" title="远程仓库有文件 关联本地仓库"></a>远程仓库有文件 关联本地仓库</h1><blockquote><p>参考文档:<a href="https://blog.csdn.net/sinat_39049092/article/details/113417142">git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客</a><br>合并时出现的问题：<a href="https://blog.csdn.net/junruitian/article/details/88361895"> refusing to merge unrelated histories的解决方案（本地&#x2F;远程）综合</a></p></blockquote><p>远程仓库有文件<br>第一步：（初始化git仓库）</p><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">`git init<br></code></pre></td></tr></table></figure><p>第二步：（设置远程remote地址）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git remote add origin 地址<br></code></pre></td></tr></table></figure><p>第三步：（拉取远程仓库master的文件）</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git pull origin <span class="hljs-literal">master</span><br></code></pre></td></tr></table></figure><p>第四步：（将本地master设置为远程master分支）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch --set-upstream-to=origin/master master<br></code></pre></td></tr></table></figure><p>第五步：（将所有变更提交到本地仓库）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git add .<br></code></pre></td></tr></table></figure><p>第六步：(合并两个独立启动仓库的历史)</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">git <span class="hljs-built_in">merge</span> <span class="hljs-comment">--allow-unrelated-histories</span><br></code></pre></td></tr></table></figure><p> 第七步：（注释）</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> commit -m <span class="hljs-string">&#x27;&#x27;</span> <br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>学习android时遇到的问题</title>
     <link href="/2022/10/13/%E5%AD%A6%E4%B9%A0android%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2022/10/13/%E5%AD%A6%E4%B9%A0android%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
