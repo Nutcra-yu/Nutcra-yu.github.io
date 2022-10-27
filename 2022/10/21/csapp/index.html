@@ -16,22 +16,22 @@
   <meta name="author" content="zyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    远程仓库有文件 关联本地仓库 参考文档:git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客合并时出现的问题： refusing to merge unrelated">
+    <meta name="description" content="第11章 网络编程11.1 客户端-服务器编程模型事务：  客户端发送请求 服务器接受请求并操作资源 服务器发送响应 客户端接收响应  11.2 网络11.3 全球IP因特网11.3.1 IP地址11.3.2 因特网域名11.3.3 因特网连接11.4 套接字接口套接字：IP + 端口 11.4.1 套接字地址结构struct sockaddr_in  11.4.2 socket函数11.4.3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git的使用">
-<meta property="og:url" content="http://nutcra.github.io.com/2022/10/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="csapp阅读笔记">
+<meta property="og:url" content="http://nutcra.github.io.com/2022/10/21/csapp/index.html">
 <meta property="og:site_name" content="Zyu">
-<meta property="og:description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    远程仓库有文件 关联本地仓库 参考文档:git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客合并时出现的问题： refusing to merge unrelated">
+<meta property="og:description" content="第11章 网络编程11.1 客户端-服务器编程模型事务：  客户端发送请求 服务器接受请求并操作资源 服务器发送响应 客户端接收响应  11.2 网络11.3 全球IP因特网11.3.1 IP地址11.3.2 因特网域名11.3.3 因特网连接11.4 套接字接口套接字：IP + 端口 11.4.1 套接字地址结构struct sockaddr_in  11.4.2 socket函数11.4.3">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-16T15:14:54.000Z">
-<meta property="article:modified_time" content="2022-10-27T11:21:21.827Z">
+<meta property="article:published_time" content="2022-10-21T07:06:35.000Z">
+<meta property="article:modified_time" content="2022-10-22T09:25:20.971Z">
 <meta property="article:author" content="zyu">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="csapp">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>git的使用 - Zyu</title>
+  <title>csapp阅读笔记 - Zyu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">git的使用</span>
+            <span id="subtitle">csapp阅读笔记</span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-16 23:14" pubdate>
-          2022年10月16日 晚上
+        <time datetime="2022-10-21 15:06" pubdate>
+          2022年10月21日 下午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          736 字
+          381 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          7 分钟
+          4 分钟
         
       </span>
     
@@ -268,59 +268,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">git的使用</h1>
+            <h1 style="display: none">csapp阅读笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><h2 id="推代码"><a href="#推代码" class="headerlink" title="推代码"></a>推代码</h2><p>三件套</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git add .<br>git commit -m &quot;A commit&quot;<br>git push<br></code></pre></td></tr></table></figure>
-
-<h2 id="拉代码"><a href="#拉代码" class="headerlink" title="拉代码"></a>拉代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git pull<br></code></pre></td></tr></table></figure>
-
-<h2 id="本地分支改名"><a href="#本地分支改名" class="headerlink" title="本地分支改名"></a>本地分支改名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch -m 想要的名字<br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="远程仓库有文件-关联本地仓库"><a href="#远程仓库有文件-关联本地仓库" class="headerlink" title="远程仓库有文件 关联本地仓库"></a>远程仓库有文件 关联本地仓库</h1><blockquote>
-<p>参考文档:<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_39049092/article/details/113417142">git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客</a><br>合并时出现的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/junruitian/article/details/88361895"> refusing to merge unrelated histories的解决方案（本地&#x2F;远程）综合</a></p>
-</blockquote>
-<p>远程仓库有文件<br>第一步：（初始化git仓库）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git init<br></code></pre></td></tr></table></figure>
-
-<p>第二步：（设置远程remote地址）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git remote add origin 地址<br></code></pre></td></tr></table></figure>
-
-<p>第三步：（拉取远程仓库master的文件）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git pull origin master<br></code></pre></td></tr></table></figure>
-
-
-<p>第四步：（将本地master设置为远程master分支）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git branch --set-upstream-to=origin/master master<br></code></pre></td></tr></table></figure>
-
-<p>第五步：（将所有变更提交到本地仓库）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git add .<br></code></pre></td></tr></table></figure>
-
-<p>第六步：(合并两个独立启动仓库的历史)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git merge --allow-unrelated-histories<br></code></pre></td></tr></table></figure>
-
-<p> 第七步：（注释）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git commit -m &#x27;&#x27; <br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h1><p>A和B两个人写一个项目，A现在要合并代码</p>
-<p>A：<br>(A branch	A在自己的分支上)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git add .<br>git commit -m &quot;A commit&quot;<br>git push<br></code></pre></td></tr></table></figure>
-
-<p>(切换到main分支上)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git checkout main<br>git pull<br>git merge A<br></code></pre></td></tr></table></figure>
-
-<p>这时候可能会有冲突 就是main上面的代码和A的代码有不一样的地方 查看</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git status<br>//或者<br>git diff <br></code></pre></td></tr></table></figure>
-
-<p>(现在知道了哪里有冲突，可以打开IDE来编辑代码冲突，一般有冲突的地方 打开软件后都会显示)</p>
-
+                <h1 id="第11章-网络编程"><a href="#第11章-网络编程" class="headerlink" title="第11章 网络编程"></a>第11章 网络编程</h1><h2 id="11-1-客户端-服务器编程模型"><a href="#11-1-客户端-服务器编程模型" class="headerlink" title="11.1 客户端-服务器编程模型"></a>11.1 客户端-服务器编程模型</h2><p>事务：</p>
+<ol>
+<li>客户端发送请求</li>
+<li>服务器接受请求并操作资源</li>
+<li>服务器发送响应</li>
+<li>客户端接收响应</li>
+</ol>
+<h2 id="11-2-网络"><a href="#11-2-网络" class="headerlink" title="11.2 网络"></a>11.2 网络</h2><h2 id="11-3-全球IP因特网"><a href="#11-3-全球IP因特网" class="headerlink" title="11.3 全球IP因特网"></a>11.3 全球IP因特网</h2><h3 id="11-3-1-IP地址"><a href="#11-3-1-IP地址" class="headerlink" title="11.3.1 IP地址"></a>11.3.1 IP地址</h3><h3 id="11-3-2-因特网域名"><a href="#11-3-2-因特网域名" class="headerlink" title="11.3.2 因特网域名"></a>11.3.2 因特网域名</h3><h3 id="11-3-3-因特网连接"><a href="#11-3-3-因特网连接" class="headerlink" title="11.3.3 因特网连接"></a>11.3.3 因特网连接</h3><h2 id="11-4-套接字接口"><a href="#11-4-套接字接口" class="headerlink" title="11.4 套接字接口"></a>11.4 套接字接口</h2><p>套接字：IP + 端口</p>
+<h3 id="11-4-1-套接字地址结构"><a href="#11-4-1-套接字地址结构" class="headerlink" title="11.4.1 套接字地址结构"></a>11.4.1 套接字地址结构</h3><p>struct sockaddr_in </p>
+<h3 id="11-4-2-socket函数"><a href="#11-4-2-socket函数" class="headerlink" title="11.4.2 socket函数"></a>11.4.2 socket函数</h3><h3 id="11-4-3-connect函数"><a href="#11-4-3-connect函数" class="headerlink" title="11.4.3 connect函数"></a>11.4.3 connect函数</h3><p>​			<strong><u>以下三个为服务器函数</u></strong></p>
+<h3 id="11-4-4-bind函数"><a href="#11-4-4-bind函数" class="headerlink" title="11.4.4 bind函数"></a>11.4.4 bind函数</h3><h3 id="11-4-5-listen函数"><a href="#11-4-5-listen函数" class="headerlink" title="11.4.5 listen函数"></a>11.4.5 listen函数</h3><h3 id="11-4-6-accept函数"><a href="#11-4-6-accept函数" class="headerlink" title="11.4.6 accept函数"></a>11.4.6 accept函数</h3><h3 id="11-4-7-主机和服务的转换"><a href="#11-4-7-主机和服务的转换" class="headerlink" title="11.4.7 主机和服务的转换"></a>11.4.7 主机和服务的转换</h3><p>get addr info ：将主机名 、主机地址、服务名和端口号的字符串转换成套接字地址结构<br>get name info  ：将一个套接字地质结构转换成相应的主机和服务名字符串  </p>
+<h3 id="11-4-8-套接字接口的辅助函数"><a href="#11-4-8-套接字接口的辅助函数" class="headerlink" title="11.4.8 套接字接口的辅助函数"></a>11.4.8 套接字接口的辅助函数</h3><p>open_clientfd函数</p>
+<h3 id="11-4-9-echo客户端和服务器的示例"><a href="#11-4-9-echo客户端和服务器的示例" class="headerlink" title="11.4.9 echo客户端和服务器的示例"></a>11.4.9 echo客户端和服务器的示例</h3>
                 
               </div>
             
@@ -332,7 +297,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../tags/git/">#git</a>
+        <a href="../../../../tags/csapp/">#csapp</a>
       
     </div>
   
@@ -344,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>git的使用</div>
-      <div>http://nutcra.github.io.com/2022/10/16/git的使用/</div>
+      <div>csapp阅读笔记</div>
+      <div>http://nutcra.github.io.com/2022/10/21/csapp/</div>
     </div>
     <div class="license-meta">
       
@@ -357,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月16日</div>
+          <div>2022年10月21日</div>
         </div>
       
       
