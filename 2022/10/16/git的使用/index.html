@@ -16,18 +16,20 @@
   <meta name="author" content="zyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    远程仓库有文件 关联本地仓库 参考文档:git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客合并时出现的问题： refusing to merge unrelated">
+    <meta name="description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    本地关联新建仓库第一步：（初始化git仓库） 1git init  第二步：（设置远程remote地址） 1git remote add origin 地址  第三步：三件套 1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的使用">
 <meta property="og:url" content="http://nutcra.github.io.com/2022/10/16/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Zyu">
-<meta property="og:description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    远程仓库有文件 关联本地仓库 参考文档:git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客合并时出现的问题： refusing to merge unrelated">
+<meta property="og:description" content="基本使用推代码三件套 123git add .git commit -m &quot;A commit&quot;git push  拉代码1git pull  本地分支改名1git branch -m 想要的名字    本地关联新建仓库第一步：（初始化git仓库） 1git init  第二步：（设置远程remote地址） 1git remote add origin 地址  第三步：三件套 1">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Nutcra-yu/picture/main/S%3A%5Cpic202210272018396.png">
 <meta property="article:published_time" content="2022-10-16T15:14:54.000Z">
-<meta property="article:modified_time" content="2022-10-27T11:21:21.827Z">
+<meta property="article:modified_time" content="2022-10-27T12:19:44.383Z">
 <meta property="article:author" content="zyu">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Nutcra-yu/picture/main/S%3A%5Cpic202210272018396.png">
   
   
   
@@ -219,7 +221,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          736 字
+          908 字
         
       </span>
     
@@ -230,7 +232,7 @@
         
         
         
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -282,6 +284,19 @@
 
 
 
+<h1 id="本地关联新建仓库"><a href="#本地关联新建仓库" class="headerlink" title="本地关联新建仓库"></a>本地关联新建仓库</h1><p>第一步：（初始化git仓库）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git init<br></code></pre></td></tr></table></figure>
+
+<p>第二步：（设置远程remote地址）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git remote add origin 地址<br></code></pre></td></tr></table></figure>
+
+<p>第三步：三件套</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">git add .<br>git commit -m &quot;A commit&quot;<br>git push<br></code></pre></td></tr></table></figure>
+
+<p>第四步：会报提示<br>复制粘贴就可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs git">git push --set-upstream origin master<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/Nutcra-yu/picture/main/S%3A%5Cpic202210272018396.png" srcset="/img/loading.gif" lazyload alt="image-20221027201825317"></p>
 <h1 id="远程仓库有文件-关联本地仓库"><a href="#远程仓库有文件-关联本地仓库" class="headerlink" title="远程仓库有文件 关联本地仓库"></a>远程仓库有文件 关联本地仓库</h1><blockquote>
 <p>参考文档:<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_39049092/article/details/113417142">git 本地仓库关联到远程仓库_Mr.Hu.的博客-CSDN博客</a><br>合并时出现的问题：<a target="_blank" rel="noopener" href="https://blog.csdn.net/junruitian/article/details/88361895"> refusing to merge unrelated histories的解决方案（本地&#x2F;远程）综合</a></p>
 </blockquote>
