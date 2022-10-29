@@ -16,22 +16,22 @@
   <meta name="author" content="zyu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="第11章 网络编程11.1 客户端-服务器编程模型事务：  客户端发送请求 服务器接受请求并操作资源 服务器发送响应 客户端接收响应  11.2 网络11.3 全球IP因特网11.3.1 IP地址11.3.2 因特网域名11.3.3 因特网连接11.4 套接字接口套接字：IP + 端口 fd: file descriptor , 文件描述符 11.4.1 套接字地址结构struct sockadd">
+    <meta name="description" content="初衷将各种语言遇到的问题记录在一起，毕竟是一通百通的东西 C&#x2F;C++指针作为参数使用问题背景Create没有成功创建 12345678910struct Node&amp;#123;&amp;#125;;void Create(Node* head)&amp;#123;    head &#x3D; (Node*)malloc(sizeof(Node));&amp;#125;int main()&amp;#123;    Node* a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="csapp阅读笔记">
-<meta property="og:url" content="http://nutcra.github.io.com/2022/10/21/csapp/index.html">
+<meta property="og:title" content="语言遇到的问题">
+<meta property="og:url" content="http://nutcra.github.io.com/2022/10/21/%E5%90%84%E7%A7%8D%E8%AF%AD%E8%A8%80%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Zyu">
-<meta property="og:description" content="第11章 网络编程11.1 客户端-服务器编程模型事务：  客户端发送请求 服务器接受请求并操作资源 服务器发送响应 客户端接收响应  11.2 网络11.3 全球IP因特网11.3.1 IP地址11.3.2 因特网域名11.3.3 因特网连接11.4 套接字接口套接字：IP + 端口 fd: file descriptor , 文件描述符 11.4.1 套接字地址结构struct sockadd">
+<meta property="og:description" content="初衷将各种语言遇到的问题记录在一起，毕竟是一通百通的东西 C&#x2F;C++指针作为参数使用问题背景Create没有成功创建 12345678910struct Node&amp;#123;&amp;#125;;void Create(Node* head)&amp;#123;    head &#x3D; (Node*)malloc(sizeof(Node));&amp;#125;int main()&amp;#123;    Node* a">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-21T07:06:35.000Z">
-<meta property="article:modified_time" content="2022-10-29T09:12:39.611Z">
+<meta property="article:published_time" content="2022-10-21T06:02:27.000Z">
+<meta property="article:modified_time" content="2022-10-29T14:39:50.846Z">
 <meta property="article:author" content="zyu">
-<meta property="article:tag" content="csapp">
+<meta property="article:tag" content="languages">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>csapp阅读笔记 - Zyu</title>
+  <title>语言遇到的问题 - Zyu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">csapp阅读笔记</span>
+            <span id="subtitle">语言遇到的问题</span>
           
         </div>
 
@@ -207,7 +207,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-21 15:06" pubdate>
+        <time datetime="2022-10-21 14:02" pubdate>
           2022年10月21日 下午
         </time>
       </span>
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          951 字
+          790 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          8 分钟
+          7 分钟
         
       </span>
     
@@ -268,53 +268,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">csapp阅读笔记</h1>
+            <h1 style="display: none">语言遇到的问题</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="第11章-网络编程"><a href="#第11章-网络编程" class="headerlink" title="第11章 网络编程"></a>第11章 网络编程</h1><h2 id="11-1-客户端-服务器编程模型"><a href="#11-1-客户端-服务器编程模型" class="headerlink" title="11.1 客户端-服务器编程模型"></a>11.1 客户端-服务器编程模型</h2><p>事务：</p>
-<ol>
-<li>客户端发送请求</li>
-<li>服务器接受请求并操作资源</li>
-<li>服务器发送响应</li>
-<li>客户端接收响应</li>
+                <h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>将各种语言遇到的问题记录在一起，毕竟是一通百通的东西</p>
+<h1 id="C-x2F-C"><a href="#C-x2F-C" class="headerlink" title="C&#x2F;C++"></a>C&#x2F;C++</h1><h2 id="指针作为参数使用"><a href="#指针作为参数使用" class="headerlink" title="指针作为参数使用"></a>指针作为参数使用</h2><h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>Create没有成功创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Create</span><span class="hljs-params">(Node* head)</span></span><br><span class="hljs-function"></span>&#123;<br>    head = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    Node* a;<br>    <span class="hljs-built_in">Create</span>(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h3><ol>
+<li>对malloc的机制</li>
+<li>函数是值传递</li>
 </ol>
-<h2 id="11-2-网络"><a href="#11-2-网络" class="headerlink" title="11.2 网络"></a>11.2 网络</h2><h2 id="11-3-全球IP因特网"><a href="#11-3-全球IP因特网" class="headerlink" title="11.3 全球IP因特网"></a>11.3 全球IP因特网</h2><h3 id="11-3-1-IP地址"><a href="#11-3-1-IP地址" class="headerlink" title="11.3.1 IP地址"></a>11.3.1 IP地址</h3><h3 id="11-3-2-因特网域名"><a href="#11-3-2-因特网域名" class="headerlink" title="11.3.2 因特网域名"></a>11.3.2 因特网域名</h3><h3 id="11-3-3-因特网连接"><a href="#11-3-3-因特网连接" class="headerlink" title="11.3.3 因特网连接"></a>11.3.3 因特网连接</h3><h2 id="11-4-套接字接口"><a href="#11-4-套接字接口" class="headerlink" title="11.4 套接字接口"></a>11.4 套接字接口</h2><p>套接字：IP + 端口</p>
-<p><code>fd</code>: file descriptor , 文件描述符</p>
-<h3 id="11-4-1-套接字地址结构"><a href="#11-4-1-套接字地址结构" class="headerlink" title="11.4.1 套接字地址结构"></a>11.4.1 套接字地址结构</h3><p>struct sockaddr_in </p>
-<h3 id="11-4-2-socket函数"><a href="#11-4-2-socket函数" class="headerlink" title="11.4.2 socket函数"></a>11.4.2 socket函数</h3><h3 id="11-4-3-connect函数"><a href="#11-4-3-connect函数" class="headerlink" title="11.4.3 connect函数"></a>11.4.3 connect函数</h3><p>​			<strong><u>以下三个为服务器函数</u></strong></p>
-<h3 id="11-4-4-bind函数"><a href="#11-4-4-bind函数" class="headerlink" title="11.4.4 bind函数"></a>11.4.4 bind函数</h3><h3 id="11-4-5-listen函数"><a href="#11-4-5-listen函数" class="headerlink" title="11.4.5 listen函数"></a>11.4.5 listen函数</h3><h3 id="11-4-6-accept函数"><a href="#11-4-6-accept函数" class="headerlink" title="11.4.6 accept函数"></a>11.4.6 accept函数</h3><h3 id="11-4-7-主机和服务的转换"><a href="#11-4-7-主机和服务的转换" class="headerlink" title="11.4.7 主机和服务的转换"></a>11.4.7 主机和服务的转换</h3><p>get addr info ：将主机名 、主机地址、服务名和端口号的字符串转换成套接字地址结构<br>get name info  ：将一个套接字地质结构转换成相应的主机和服务名字符串  </p>
-<h3 id="11-4-8-套接字接口的辅助函数"><a href="#11-4-8-套接字接口的辅助函数" class="headerlink" title="11.4.8 套接字接口的辅助函数"></a>11.4.8 套接字接口的辅助函数</h3><p>open_clientfd函数</p>
-<h3 id="11-4-9-echo客户端和服务器的示例"><a href="#11-4-9-echo客户端和服务器的示例" class="headerlink" title="11.4.9 echo客户端和服务器的示例"></a>11.4.9 echo客户端和服务器的示例</h3><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">gcc echoserveri.<span class="hljs-keyword">c</span> csapp.<span class="hljs-keyword">c</span> -lpthread -o serveri<br></code></pre></td></tr></table></figure>
+<h4 id="malloc的作用"><a href="#malloc的作用" class="headerlink" title="malloc的作用"></a>malloc的作用</h4><p>malloc()函数其实就在内存中找一片指定大小的空间，然后将这个空间的首地址范围给一个指针变量</p>
+<h3 id="错误解析"><a href="#错误解析" class="headerlink" title="错误解析"></a>错误解析</h3><p>将指针<code>head</code>传入<code>Create()</code>,由于函数是值传递,实际上在函数里是将<code>head</code>复制了,比如<code>temp = head</code>,<code>temp</code>和<code>head</code>指向同一个地方,但是在函数里只会对<code>temp</code>进行操作<br>这时候<code>malloc</code>创建的空间首地址只是给了<code>temp</code>,出了函数之后创建的空间就随着<code>temp</code>消失而找不到了</p>
+<h3 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h3><p>修改后：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Create</span><span class="hljs-params">(Node** head)</span><span class="hljs-comment">//修改</span></span><br><span class="hljs-function"></span>&#123;<br>    *head = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));<span class="hljs-comment">//修改</span><br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    Node* a;<br>    Node ** b = &amp;a;<span class="hljs-comment">//添加</span><br>    <span class="hljs-built_in">Create</span>(b);<span class="hljs-comment">//修改</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./serveri 端口<br></code></pre></td></tr></table></figure>
+<p>修改前：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;&#125;;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Create</span><span class="hljs-params">(Node* head)</span></span><br><span class="hljs-function"></span>&#123;<br>    head = (Node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(Node));<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    Node* a;<br>    <span class="hljs-built_in">Create</span>(a);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="11-5-web服务器"><a href="#11-5-web服务器" class="headerlink" title="11.5 web服务器"></a>11.5 web服务器</h2><h3 id="11-5-1-web基础"><a href="#11-5-1-web基础" class="headerlink" title="11.5.1 web基础"></a>11.5.1 web基础</h3><p><code>HTTP</code>:Hypertext Transfer Protocol , 超文本传输协议<br><code>HTML</code>:Hypertext Markup Language , 超文本标记语言</p>
-<h3 id="11-5-2-web内容"><a href="#11-5-2-web内容" class="headerlink" title="11.5.2 web内容"></a>11.5.2 web内容</h3><p><code>MIME</code>:Multipurpose Internet Mail Extensions, 多用途的网际邮件扩充协议<br><code>URL</code>:Universal Resource Locator, 通用资源定位符</p>
-<h3 id="11-5-3-HTTP事务"><a href="#11-5-3-HTTP事务" class="headerlink" title="11.5.3 HTTP事务"></a>11.5.3 HTTP事务</h3><p>GET返回:<br><code>URI</code>:Uniform Resource Identifier, 统一 资源标识符  </p>
-<ol>
-<li><p>HTTP请求<br>请求行: <code>method URI version</code>  </p>
-<blockquote>
-<p>GET &#x2F; HTTP&#x2F;1.1  </p>
-</blockquote>
-<p>请求报头: <code>header-name: header-data</code></p>
-<blockquote>
-<p>Host: <a target="_blank" rel="noopener" href="http://www.aol/">www.aol</a>. com  </p>
-</blockquote>
-<p>空白行终止header</p>
-</li>
-<li><p>HTTP响应</p>
-<p>响应行</p>
-<blockquote>
-<p>HTTP&#x2F;1.0 200 OK  </p>
-</blockquote>
-<p>响应报头+空行终止<br>响应主体</p>
-</li>
-</ol>
-<h3 id="11-5-4-服务动态内容"><a href="#11-5-4-服务动态内容" class="headerlink" title="11.5.4 服务动态内容"></a>11.5.4 服务动态内容</h3><p><code>CGI</code> : Common Gateway Interface , 通用网关接口  </p>
-<h3 id="11-6-TINY-web服务器"><a href="#11-6-TINY-web服务器" class="headerlink" title="11.6 TINY web服务器"></a>11.6 TINY web服务器</h3><h1 id="第十二章-并发"><a href="#第十二章-并发" class="headerlink" title="第十二章 并发"></a>第十二章 并发</h1><p>进程间通信 ( interprocess communication , IPC)   </p>
-
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xw13106209/article/details/4962479">malloc函数详解_xw13106209的博客-CSDN博客_malloc</a></p>
+<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1>
                 
               </div>
             
@@ -326,7 +302,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../tags/csapp/">#csapp</a>
+        <a href="../../../../tags/languages/">#languages</a>
       
     </div>
   
@@ -338,8 +314,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>csapp阅读笔记</div>
-      <div>http://nutcra.github.io.com/2022/10/21/csapp/</div>
+      <div>语言遇到的问题</div>
+      <div>http://nutcra.github.io.com/2022/10/21/各种语言的问题/</div>
     </div>
     <div class="license-meta">
       
